@@ -9,18 +9,13 @@ const ContinentsView = {
       console.log("ContinentsView.render()...");
 
       // Renderiza el contenido
-      // document.getElementById("cont").innerHTML = "CONTINENTS (rendered)";
-      $(this.container).html(`CONTINENTS (rendered)`);
-
-      // Mostrar los continentes obtenidos por el servicio, recibidos del controlador
-      // console.log(continents);
-      let htmlList = "<ul>";
+      let htmlList = "<h2>Continents</h2><ul class='list-group'>";
       for (let i in continents) {
-         htmlList += `<li>${continents[i].name}</li>`;
+         htmlList += `<li class='list-group-item'>${continents[i].name}</li>`;
       }
       htmlList += "</ul>";
 
-      $(this.container).html($(this.container).html() + htmlList);
+      $(this.container).html(htmlList);
    }
 };
 
