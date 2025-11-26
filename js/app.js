@@ -1,6 +1,8 @@
 // Importa el controlador de productos
 import HomeController from './controllers/homeController.js';
 import ContinentsController from './controllers/continentsController.js';
+import CharactersController from './controllers/charactersController.js';
+import HousesController from './controllers/housesController.js';
 
 // Inicialización de la aplicación
 const App = {
@@ -11,6 +13,8 @@ const App = {
       // Carga componentes
       HomeController.init();
       ContinentsController.init();
+      CharactersController.init();
+      HousesController.init();
    }
 };
 
