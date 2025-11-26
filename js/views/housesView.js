@@ -1,29 +1,34 @@
 // Vista de casas
 const HousesView = {
-   container: '#hous',
+   // Contenedor HTML donde se renderizará la vista
+   container: "#hous",
 
+
+   // Método para renderizar la vista
    render(houses) {
-      console.log('HousesView.render()...');
+      console.log("HousesView.render()...");
 
-      let html = '<h2>Houses</h2>';
-      html += '<ul class="list-group">';
+      // Renderiza el contenido
+      let htmlList = "<h2>Houses</h2>";
+      htmlList += "<ul class=\"list-group\">";
 
-      houses.forEach(house => {
-         html += `
-            <li class="list-group-item d-flex justify-content-between align-items-center">
+      for (let i in houses) {
+         htmlList += `
+            <li class=\"list-group-item d-flex justify-content-between align-items-center\">
                <span>
-                  <strong>${house.name}</strong><br>
-                  <small>${house.region || 'Región desconocida'}</small>
+                  <strong>${houses[i].name}</strong><br>
+                  <small>${houses[i].region || "Región desconocida"}</small>
                </span>
-               <span class="badge bg-secondary">${house.words || 'Sin lema'}</span>
-            </li>
-         `;
-      });
+               <span class=\"badge bg-secondary\">${houses[i].words || "Sin lema"}</span>
+            </li>`;
+      }
 
-      html += '</ul>';
+      htmlList += "</ul>";
 
-      $(this.container).html(html);
-   },
+      $(this.container).html(htmlList);
+   }
 };
 
+
+// Exporta la vista
 export default HousesView;
